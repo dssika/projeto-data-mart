@@ -1,0 +1,15 @@
+insert into TB_Produto values('011111111','Perfurme X',10);
+insert into TB_Produto values('022222222','Perfurme Y',15.50);
+insert into TB_Produto values('022222222','Perfurme Z',25.00);
+insert into TB_Produto values('033333333','Perfurme A',70);
+insert into TB_Produto values('044444444','Perfurme B',65);
+insert into TB_Produto values('055555555','Perfurme C',120);
+insert into TB_Produto values('066666666','Perfurme W',25.50);
+insert into TB_Produto values('077777777','Perfurme Y',30);
+insert into TB_Produto values('0888888888','Cosmetico M',20);
+insert into TB_Produto values('0999999999','Cosmetico A',122);
+insert into TB_Produto values('1011111111','Cosmetico D',56.45);
+insert into TB_Produto values('1022222222','Cosmetico A',51.00);
+insert into TB_Produto values('1033333333','Cosmetico J',99.99);
+insert into TB_Produto values('1044444444','Cosmetico Z',200);
+insert into TB_Produto values('1055555555','Cosmetico W',89.90);
