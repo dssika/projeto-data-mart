@@ -1,4 +1,4 @@
-insert into tb_cliente values('00000000000','Cliente não cadastrado');
+insert into tb_cliente (cpf,nome) values('00000000000','Cliente não cadastrado');
 insert into tb_cliente values('12324554987','joao','1999-09-27','rua percilio','centro','itabaiana');
 insert into tb_cliente values('12345678987','maria','1989-09-27','rua X','centro','carira');
 insert into tb_cliente values('10257678987','josefa','1979-10-27','rua y','centro','itabaiana');
@@ -8,7 +8,7 @@ insert into tb_cliente values('12322468987','Ricardo','1956-09-27','rua parque',
 insert into tb_cliente values('12311118987','Raiane','1998-09-27','rua percilio','centro','itabaiana');
 insert into tb_cliente values('87645678987','Juli','1999-09-27','rua Sao jose','Araua','Frei Paulo');
 insert into tb_cliente values('98745678987','André','1969-09-27','rua Vazea','centro','Carira');
-insert into tb_cliente values('12345678987','Maria Jose','1989-19-27','rua Antonio','Araua','Aracaju');
+insert into tb_cliente values('12345678987','Maria Jose','1989-12-27','rua Antonio','Araua','Aracaju');
 insert into tb_cliente values('12345678987','Joaquim','1989-09-17','rua Andrade','centro','itabaiana');
 insert into tb_cliente values('12345600007','Jessica','1989-01-07','rua percilio','centro','Aracaju');
 insert into tb_cliente values('12300987987','Igor','1989-02-27','rua percilio','centro','itabaiana');

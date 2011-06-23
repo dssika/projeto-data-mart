@@ -169,6 +169,7 @@ CREATE TABLE TB_Venda (
   TB_Loja_codigo INT  NOT NULL  ,
   TB_DataComemorativa_codigo INT    ,
   TB_Cliente_codigo INT    ,
+  quantidade INT    ,
   data_venda DATETIME    ,
   valor_Total NUMERIC(10,2)      ,
 PRIMARY KEY(codigo)          ,

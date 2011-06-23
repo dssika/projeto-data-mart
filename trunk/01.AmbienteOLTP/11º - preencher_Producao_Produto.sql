@@ -141,7 +141,6 @@ insert into Producao_Produto values(13,10,670);
 insert into Producao_Produto values(13,11,300);
 insert into Producao_Produto values(13,2,100);
 insert into Producao_Produto values(13,3,150);
-insert into Producao_Produto values(13,4,40);
 insert into Producao_Produto values(14,10,670);
 insert into Producao_Produto values(14,11,300);
 insert into Producao_Produto values(14,3,150);
