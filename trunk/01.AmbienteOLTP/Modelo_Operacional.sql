@@ -1,6 +1,8 @@
 CREATE TABLE TB_Loja (
   codigo INT  NOT NULL   IDENTITY ,
   nome VARCHAR(20)  NOT NULL  ,
+  regiao VARCHAR(20)    ,
+  estado VARCHAR(20)    ,
   cidade VARCHAR(20)      ,
 PRIMARY KEY(codigo));
 GO
@@ -23,11 +25,10 @@ GO
 
 
 
-CREATE TABLE TB_Producao (
-  lote INT  NOT NULL   IDENTITY ,
-  descricao VARCHAR(20)    ,
-  data_fabricacao DATETIME      ,
-PRIMARY KEY(lote));
+CREATE TABLE TB_FormaPagamento (
+  codigo INT  NOT NULL   IDENTITY ,
+  forma_pagamento VARCHAR(10)      ,
+PRIMARY KEY(codigo));
 GO
 
 
@@ -49,6 +50,7 @@ CREATE TABLE TB_Produto (
   codigo INT  NOT NULL   IDENTITY ,
   codigo_barra INT    ,
   descricao VARCHAR(25)    ,
+  linha VARCHAR(15)    ,
   valor NUMERIC(10,2)      ,
 PRIMARY KEY(codigo));
 GO
@@ -56,10 +58,11 @@ GO
 
 
 
-CREATE TABLE TB_FormaPagamento (
-  codigo INT  NOT NULL   IDENTITY ,
-  forma_pagamento VARCHAR(10)      ,
-PRIMARY KEY(codigo));
+CREATE TABLE TB_Producao (
+  lote INT  NOT NULL   IDENTITY ,
+  descricao VARCHAR(20)    ,
+  data_fabricacao DATETIME      ,
+PRIMARY KEY(lote));
 GO
 
 
@@ -110,6 +113,29 @@ GO
 CREATE INDEX IFK_Rel_01 ON Producao_Produto (TB_Producao_lote);
 GO
 CREATE INDEX IFK_Rel_02 ON Producao_Produto (TB_Produto_codigo);
+GO
+
+
+CREATE TABLE Producao_Loja (
+  TB_Producao_lote INT  NOT NULL  ,
+  TB_Loja_codigo INT  NOT NULL    ,
+PRIMARY KEY(TB_Producao_lote, TB_Loja_codigo)    ,
+  FOREIGN KEY(TB_Producao_lote)
+    REFERENCES TB_Producao(lote),
+  FOREIGN KEY(TB_Loja_codigo)
+    REFERENCES TB_Loja(codigo));
+GO
+
+
+CREATE INDEX TB_Producao_has_TB_Loja_FKIndex1 ON Producao_Loja (TB_Producao_lote);
+GO
+CREATE INDEX TB_Producao_has_TB_Loja_FKIndex2 ON Producao_Loja (TB_Loja_codigo);
+GO
+
+
+CREATE INDEX IFK_Rel_12 ON Producao_Loja (TB_Producao_lote);
+GO
+CREATE INDEX IFK_Rel_13 ON Producao_Loja (TB_Loja_codigo);
 GO
 
 
