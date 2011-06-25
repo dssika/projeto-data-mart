@@ -64,6 +64,10 @@ CREATE TABLE TB_Aux_Pagamento(
 	forma_pagamento VARCHAR(10) NOT NULL
 )
 
-
-
-
+create  table TB_Aux_Producao (
+  data_carga DATETIME NOT NULL,
+  lote int ,
+  descricao varchar(20),
+  data_fabricacao varchar(20) null ,
+  quantidade int null 
+  )
