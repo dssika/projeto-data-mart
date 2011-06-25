@@ -1,4 +1,4 @@
-insert into tb_cliente (cpf,nome) values('00000000000','Cliente não cadastrado');
+insert into tb_cliente values('00000000000','Cliente não cadastrado','2000-12-31','','','');
 insert into tb_cliente values('12324554987','joao','1999-09-27','rua percilio','centro','itabaiana');
 insert into tb_cliente values('12345678987','maria','1989-09-27','rua X','centro','carira');
 insert into tb_cliente values('10257678987','josefa','1979-10-27','rua y','centro','itabaiana');

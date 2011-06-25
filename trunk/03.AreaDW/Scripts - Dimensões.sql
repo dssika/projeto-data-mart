@@ -32,18 +32,19 @@ CREATE TABLE DIM_Produto(
 CREATE TABLE DIM_Promocao(
 	id_promocao INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	cod_promocao INT  NOT NULL,
-	descricao VARCHAR(25)NOT NULL,
+	descricao VARCHAR(30)NOT NULL,
 	data_inicial DATETIME NOT NULL, 
-	data_final DATETIME NULL
+	data_final DATETIME NOT NULL,
+	desconto NUMERIC(10,2) NOT NULL
 )
 
 CREATE TABLE DIM_Loja(
 	id_loja INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	cod_loja INT  NOT NULL,
 	nome VARCHAR(20)NOT NULL,
-	cidade VARCHAR(20)NOT NULL,
+	regiao VARCHAR(20)NOT NULL,
 	estado VARCHAR(20)NOT NULL,
-	regiao VARCHAR(20)NOT NULL
+	cidade VARCHAR(20)NOT NULL
 )
 
 CREATE TABLE DIM_Data_Comemorativa(
@@ -57,13 +58,14 @@ CREATE TABLE DIM_Funcionario(
 	id_funcionario INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	cod_funcionario INT  NOT NULL,
 	cpf VARCHAR(11) NOT NULL,
-	nome VARCHAR(15) NOT NULL, 
+	nome VARCHAR(30) NOT NULL, 
 	data_nascimento DATE NOT NULL, 
 	data_admissao DATE NOT NULL,
-	endereco VARCHAR(45) NOT NULL, 
-	bairro VARCHAR(45) NOT NULL,
-	cidade VARCHAR(45) NOT NULL
+	endereco TEXT NOT NULL, 
+	bairro VARCHAR(20) NOT NULL,
+	cidade VARCHAR(20) NOT NULL
 )
+
 
 CREATE TABLE DIM_Pagamento(
 	id_pagamento INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
@@ -76,10 +78,10 @@ CREATE TABLE DIM_Cliente(
 	id_cliente INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	cod_cliente INT  NOT NULL,
 	cpf VARCHAR(11) NOT NULL,
-	nome VARCHAR(15) NOT NULL, 
-	data_admissao DATE NOT NULL,
+	nome VARCHAR(30) NOT NULL, 
+	data_nascimento DATE NOT NULL,
 	endereco VARCHAR(45) NOT NULL, 
-	bairro VARCHAR(45) NOT NULL,
-	cidade VARCHAR(45) NOT NULL
+	bairro VARCHAR(20) NOT NULL,
+	cidade VARCHAR(20) NOT NULL
 )
 

@@ -1,3 +1,4 @@
+insert into TB_Promocoes values('Sem promoção','2011-12-30','2011-12-31',0);
 insert into TB_Promocoes values('Dia dos Pais','2011-02-01','2011-02-28',10);
 insert into TB_Promocoes values('Dia das maes','2011-02-01','2011-02-28',10);
 insert into TB_Promocoes values('Kit Perfume','2011-02-01','2011-03-01',60);

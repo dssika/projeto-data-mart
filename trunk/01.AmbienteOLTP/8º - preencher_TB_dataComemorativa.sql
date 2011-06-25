@@ -4,6 +4,6 @@ insert into TB_DataComemorativa values('Natal','2011-12-25');
 insert into TB_DataComemorativa values('São João','2011-06-25');
 insert into TB_DataComemorativa values('Dias dos Namorados','2011-06-12');
 insert into TB_DataComemorativa values('Carnaval','2011-03-03');
-insert into TB_DataComemorativa values('Reveion','2011-01-01');
+insert into TB_DataComemorativa values('Reveillon','2011-01-01');
 
 

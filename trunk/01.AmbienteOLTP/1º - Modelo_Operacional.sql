@@ -1,24 +1,23 @@
 CREATE TABLE TB_Loja (
   codigo INT  NOT NULL   IDENTITY ,
   nome VARCHAR(20)  NOT NULL  ,
-  regiao VARCHAR(20)    ,
-  estado VARCHAR(20)    ,
-  cidade VARCHAR(20)      ,
+  regiao VARCHAR(20)   NOT NULL ,
+  estado VARCHAR(20)  NOT NULL  ,
+  cidade VARCHAR(20)   NOT NULL   ,
 PRIMARY KEY(codigo));
 GO
 
 
 
-
 CREATE TABLE TB_Funcionario (
   codigo INT  NOT NULL   IDENTITY ,
-  cpf VARCHAR(11)    ,
-  nome VARCHAR(30)    ,
-  data_nascimento DATETIME    ,
-  data_admissao DATETIME    ,
-  endereco TEXT    ,
-  bairro VARCHAR(20)    ,
-  cidade VARCHAR(20)      ,
+  cpf VARCHAR(11) NOT NULL ,
+  nome VARCHAR(30)  NOT NULL  ,
+  data_nascimento DATETIME  NOT NULL  ,
+  data_admissao DATETIME  NOT NULL  ,
+  endereco TEXT  NOT NULL  ,
+  bairro VARCHAR(20)  NOT NULL  ,
+  cidade VARCHAR(20)   NOT NULL   ,
 PRIMARY KEY(codigo));
 GO
 
@@ -27,7 +26,7 @@ GO
 
 CREATE TABLE TB_FormaPagamento (
   codigo INT  NOT NULL   IDENTITY ,
-  forma_pagamento VARCHAR(10)      ,
+  forma_pagamento VARCHAR(10)  NOT NULL,
 PRIMARY KEY(codigo));
 GO
 
@@ -36,10 +35,10 @@ GO
 
 CREATE TABLE TB_Promocoes (
   codigo INT  NOT NULL   IDENTITY ,
-  descricao VARCHAR(30)    ,
-  data_inicio DATETIME    ,
-  data_fim DATETIME    ,
-  desconto NUMERIC(10,2)      ,
+  descricao VARCHAR(30)  NOT NULL  ,
+  data_inicio DATETIME   NOT NULL ,
+  data_fim DATETIME      NOT NULL,
+  desconto NUMERIC(10,2) NOT NULL,
 PRIMARY KEY(codigo));
 GO
 
@@ -47,11 +46,11 @@ GO
 
 
 CREATE TABLE TB_Produto (
-  codigo INT  NOT NULL   IDENTITY ,
-  codigo_barra INT    ,
-  descricao VARCHAR(25)    ,
-  linha VARCHAR(15)    ,
-  valor NUMERIC(10,2)      ,
+  codigo INT  NOT NULL   IDENTITY,
+  codigo_barra INT  NOT NULL,
+  descricao VARCHAR(25)  NOT NULL,
+  linha VARCHAR(20)  NOT NULL,
+  valor NUMERIC(10,2)  NOT NULL,
 PRIMARY KEY(codigo));
 GO
 
@@ -60,8 +59,8 @@ GO
 
 CREATE TABLE TB_Producao (
   lote INT  NOT NULL   IDENTITY ,
-  descricao VARCHAR(20)    ,
-  data_fabricacao DATETIME      ,
+  descricao VARCHAR(20) NOT NULL ,
+  data_fabricacao DATETIME NOT NULL ,
 PRIMARY KEY(lote));
 GO
 
@@ -70,12 +69,12 @@ GO
 
 CREATE TABLE TB_Cliente (
   codigo INT  NOT NULL   IDENTITY ,
-  cpf VARCHAR(11)    ,
-  nome VARCHAR(30)    ,
-  data_nascimento DATETIME    ,
-  endereco TEXT    ,
-  bairro VARCHAR(20)    ,
-  cidade VARCHAR(20)      ,
+  cpf VARCHAR(11) NOT NULL,
+  nome VARCHAR(30) NOT NULL,
+  data_nascimento DATETIME NOT NULL,
+  endereco TEXT NOT NULL,
+  bairro VARCHAR(20)NOT NULL,
+  cidade VARCHAR(20)NOT NULL,
 PRIMARY KEY(codigo));
 GO
 
@@ -95,7 +94,7 @@ GO
 CREATE TABLE Producao_Produto (
   TB_Producao_lote INT  NOT NULL  ,
   TB_Produto_codigo INT  NOT NULL  ,
-  quantidade INT      ,
+  quantidade INT NOT NULL,
 PRIMARY KEY(TB_Producao_lote, TB_Produto_codigo)    ,
   FOREIGN KEY(TB_Producao_lote)
     REFERENCES TB_Producao(lote),
@@ -167,11 +166,10 @@ CREATE TABLE TB_Venda (
   TB_FormaPagamento_codigo INT  NOT NULL  ,
   TB_Funcionario_codigo INT  NOT NULL  ,
   TB_Loja_codigo INT  NOT NULL  ,
-  TB_DataComemorativa_codigo INT    ,
-  TB_Cliente_codigo INT    ,
-  quantidade INT    ,
-  data_venda DATETIME    ,
-  valor_Total NUMERIC(10,2)      ,
+  TB_DataComemorativa_codigo INT NOT NULL ,
+  TB_Cliente_codigo INT NOT NULL ,
+  data_venda DATETIME NOT NULL ,
+  valor_Total NUMERIC(10,2) NOT NULL ,
 PRIMARY KEY(codigo)          ,
   FOREIGN KEY(TB_Loja_codigo)
     REFERENCES TB_Loja(codigo),
