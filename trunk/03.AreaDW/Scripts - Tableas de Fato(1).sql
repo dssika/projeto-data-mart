@@ -16,8 +16,7 @@ CREATE TABLE FATO_Venda(
 	CONSTRAINT fk_FATO_Venda_DIM_Tempo FOREIGN KEY(id_tempo) REFERENCES DIM_Tempo (id_tempo),
 	CONSTRAINT fk_FATO_Venda_DIM_Loja FOREIGN KEY(id_loja) REFERENCES DIM_Loja (id_loja),
 	CONSTRAINT fk_FATO_Venda_DIM_Produto FOREIGN KEY(id_produto) REFERENCES DIM_Produto (id_produto),
-	CONSTRAINT fk_FATO_Venda_DIM_Data_Comemorativa FOREIGN KEY(id_cliente) REFERENCES DIM_Cliente (id_cliente),
-	
+CONSTRAINT fk_FATO_Venda_DIM_Data_Comemorativa FOREIGN KEY(id_data_comemorativa) REFERENCES DIM_Data_Comemorativa (id_data_comemorativa)	
 )
 
 
@@ -74,11 +73,11 @@ CREATE TABLE FATO_Venda_Agregado(
 CREATE TABLE FATO_Promocao_Agregado(
 	id_fato_promocao int IDENTITY(1,1) PRIMARY KEY NOT NULL,
 	id_loja INT  NOT NULL,
-	id_data_comemorativa DATETIME NOT NULL,
+	id_data_comemorativa INT NOT NULL,
 	quantidade INT NOT NULL
 	
 	CONSTRAINT fk_FATO_Promocao_Agregado_DIM_Loja FOREIGN KEY(id_loja) REFERENCES DIM_Loja (id_loja),
-	CONSTRAINT fk_FATO_Promocao_Agregado_DIM_Data_Comemorativa FOREIGN KEY(id_data_comemorativa) REFERENCES DIM_Data_Comemorativa(id_data_comemorativa),
+	CONSTRAINT  fk_FATO_Promocao_Agregado_DIM_Data_Comemorativa FOREIGN KEY(id_data_comemorativa) REFERENCES DIM_Data_Comemorativa (id_data_comemorativa)	
 )
 
 
